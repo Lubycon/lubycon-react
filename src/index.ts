@@ -1,1 +1,1 @@
-export { default as logger, FirebaseConfig } from './logger';
+export { default as logger } from './logger';
