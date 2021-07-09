@@ -1,6 +1,9 @@
 import { useRef } from 'react';
 
-function useThrottle<A extends unknown[]>(callback: (...args: A) => void, delay: number) {
+export default function useThrottle<A extends unknown[]>(
+  callback: (...args: A) => void,
+  delay: number
+) {
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   return function throttledCallback(...args: A) {
@@ -12,5 +15,3 @@ function useThrottle<A extends unknown[]>(callback: (...args: A) => void, delay:
     }
   };
 }
-
-export default useThrottle;
