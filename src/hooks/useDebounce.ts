@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useCallback } from 'react';
 
 export default function useDebounce<A extends unknown[]>(
   callback: (...args: A) => void,
@@ -7,12 +7,11 @@ export default function useDebounce<A extends unknown[]>(
   const argsRef = useRef<A>();
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-
-  function cleanup() {
+  const cleanup = useCallback(() => {
     if (timer.current) clearTimeout(timer.current);
-  };
+  }, []);
 
-  return function debouncedCallback(...args: A) {
+  const debouncedCallback = useCallback((...args: A) => {
     argsRef.current = args;
     cleanup();
     timer.current = setTimeout(() => {
@@ -21,5 +20,7 @@ export default function useDebounce<A extends unknown[]>(
         timer.current = null;
       }
     }, delay);
-  };
+  }, []);
+
+  return debouncedCallback;
 }
