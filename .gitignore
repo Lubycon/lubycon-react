@@ -14,8 +14,6 @@ demo
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
 .yarn/*
 !.yarn/cache
 !.yarn/patches
