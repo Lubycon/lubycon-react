@@ -1,13 +1,8 @@
-import { useState, Dispatch } from 'react';
+import { useState } from 'react';
 
 export interface BindInput {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-export interface UseBindInput {
-  bind: BindInput;
-  setValue: Dispatch<React.SetStateAction<string>>;
 }
 
 const useBindInput = (initialValue?: string, inputValidator?: (text: string) => boolean) => {
