@@ -5,7 +5,7 @@ export interface BindInput {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const useBindInput = (initialValue?: string, inputValidator?: (text: string) => boolean) => {
+const useBindInput = ({ initialValue, validator }: { initialValue?: string; validator?: (text: string) => boolean }) => {
   const [value, setValue] = useState(initialValue ?? '');
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
