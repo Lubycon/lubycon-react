@@ -5,7 +5,13 @@ export interface BindInput {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const useBindInput = (initialValue?: string, inputValidator?: (text: string) => boolean) => {
+const useBindInput = ({
+  initialValue,
+  validator,
+}: {
+  initialValue?: string;
+  validator?: (text: string) => boolean;
+}) => {
   const [value, setValue] = useState(initialValue ?? '');
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,8 +19,8 @@ const useBindInput = (initialValue?: string, inputValidator?: (text: string) => 
       target: { value: text },
     } = e;
 
-    if (inputValidator) {
-      const willUpdate = inputValidator(text);
+    if (validator) {
+      const willUpdate = validator(text);
       if (willUpdate) {
         setValue(text);
       }
