@@ -77,6 +77,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["shelljs", "npm:0.8.4"],
             ["ts-jest", "virtual:be8c83381870a08f1128d9f4ad04b4afee7425bfd503b103722dc3d2ced98b6feb60e742b3c0e8763567141e8cc51a4e220f0fc4913836739fa186686d6f949d#npm:23.10.5"],
             ["ts-node", "npm:7.0.1"],
+            ["tslib", "npm:2.3.0"],
             ["typescript", "patch:typescript@npm%3A3.9.9#builtin<compat/typescript>::version=3.9.9&hash=ddfc1b"]
           ],
           "linkType": "SOFT",
@@ -395,6 +396,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["shelljs", "npm:0.8.4"],
             ["ts-jest", "virtual:be8c83381870a08f1128d9f4ad04b4afee7425bfd503b103722dc3d2ced98b6feb60e742b3c0e8763567141e8cc51a4e220f0fc4913836739fa186686d6f949d#npm:23.10.5"],
             ["ts-node", "npm:7.0.1"],
+            ["tslib", "npm:2.3.0"],
             ["typescript", "patch:typescript@npm%3A3.9.9#builtin<compat/typescript>::version=3.9.9&hash=ddfc1b"]
           ],
           "linkType": "SOFT",
@@ -14568,6 +14570,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/tslib-npm-2.1.0-81c9ac9b82-d8f5bdd067.zip/node_modules/tslib/",
           "packageDependencies": [
             ["tslib", "npm:2.1.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:2.3.0", {
+          "packageLocation": "./.yarn/cache/tslib-npm-2.3.0-277e75e108-7b4fc9feff.zip/node_modules/tslib/",
+          "packageDependencies": [
+            ["tslib", "npm:2.3.0"]
           ],
           "linkType": "HARD",
         }]
