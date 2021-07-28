@@ -126,5 +126,8 @@
   },
   "peerDependencies": {
     "react": "^17.0.2"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
   }
 }
